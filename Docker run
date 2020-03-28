@@ -1,0 +1,10 @@
+docker run -d \
+--name pihole \
+-p 5353:53/tcp -p 5353:53/udp \
+-p 1080:80 \
+-p 4443:443 \
+-e TZ="Europa/Madrid" \
+-v /volume1/Docker/pihole/etc-pihole/:/etc/pihole/ \
+-v /volume1/Docker/pihole/etc-dnsmasq.d/:/etc/dnsmasq.d/ \
+--restart=unless-stopped \
+pihole/pihole
